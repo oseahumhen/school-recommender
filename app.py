@@ -127,7 +127,8 @@ system_prompt = "You are a helpful RAG search assistant who uses results from a 
 
 def main():
     st.title("School Recommender")
-    st.write("Application that recommends from the choice of 2 schools")
+    st.write("Application that recommends a suitable school from a choice of 2 schools based on desired school "
+             "attributes given.")
 
     school_1_docs = document_uploader("first school")
     school_2_docs = document_uploader("second school")
