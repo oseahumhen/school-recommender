@@ -58,7 +58,6 @@ def retrieve_context(query, school_tag):
     return COLLECTION.query(query_texts=[query], where={"school_tag": school_tag}, n_results=1)
 
 def create_prompt(user_query, school_1_results, school_2_results):
-    # to do
     return f"""
     <INSTRUCTION>
     Your task is to recommend a school from 2 school options based on list of desirable attributes found in USER_QUERY section
@@ -136,7 +135,6 @@ def main():
     add_to_collection(split_docs(school_1_docs), "school_one")
     add_to_collection(split_docs(school_2_docs), "school_two")
 
-    # user_query = "i want a school that supports sporting activities"
     user_query = st.text_area("Write FIVE desired school attribute ONE ON EACH LINE", key="user_query")
     if st.button("Recommend School"):
         user_query_list = user_query.strip().split("\n")
